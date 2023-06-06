@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 152925045}
   - component: {fileID: 152925044}
   - component: {fileID: 152925043}
+  - component: {fileID: 152925050}
   m_Layer: 0
   m_Name: Hand_Grabbable_Event
   m_TagString: Untagged
