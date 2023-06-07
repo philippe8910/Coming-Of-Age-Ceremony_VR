@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChoeseGenderState : IState
 {
-    LevelSystem system;
-
-    public void StateEnter(LevelSystem _system)
+    
+    
+    public void StateEnter(object _actor)
     {
-        system  = _system;
+        // actor  = _actor;
     }
 
     public void StateStay()

@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestState : IState
+public class TestState<T> : IState
 {
-    LevelSystem system;
-
-    public void StateEnter(LevelSystem _system)
+    T actor;
+    public void StateEnter(object _actor)
     {
-        system  = _system;
-
-
+        actor = _actor;
     }
 
     public void StateStay()
@@ -19,5 +16,12 @@ public class TestState : IState
 
     public void StateExit()
     {
+    }
+
+
+
+    public void StateEnter()
+    {
+        throw new System.NotImplementedException();
     }
 }

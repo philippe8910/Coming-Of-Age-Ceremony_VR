@@ -2,23 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StatesPool
+public class SevenMMActor : MonoBehaviour
 {
-    ChoeseGenderState,
-}
-
-public class LevelSystem : MonoBehaviour
-{
-
     [SerializeField] StatesPool defultState;
     IState currentState;
-    
-
-   
     void Start()
     {
         currentState = SetDefultState(defultState);
-        currentState.StateEnter();
+        currentState.StateEnter(this);
     }
 
     void Update()
@@ -30,7 +21,7 @@ public class LevelSystem : MonoBehaviour
     {
         currentState.StateExit();
         currentState = newState;
-        currentState.StateEnter();
+        currentState.StateEnter(this);
     }
 
     private IState SetDefultState(StatesPool _defultState)
