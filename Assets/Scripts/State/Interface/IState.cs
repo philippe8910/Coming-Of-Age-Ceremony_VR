@@ -1,6 +1,6 @@
 public interface IState
 {
-    void StateEnter();
+    void StateEnter(object _actor);
 
     void StateStay();
 

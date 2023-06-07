@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 227210552}
   - component: {fileID: 227210551}
   m_Layer: 5
-  m_Name: Text
+  m_Name: DialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: sadasd
+  m_Text: asasasasas
 --- !u!222 &227210552
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2199,8 +2199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465724721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.38, y: 0.77, z: 1.57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.11, y: 0.77, z: 1.57}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -2214,7 +2214,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1465724721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 476bb10ab5465bf4ba81d3e60a4abce4, type: 3}
+  m_Script: {fileID: 11500000, guid: 353c6850a2a35c44a840e97fc6be5246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1680799908
@@ -2985,7 +2985,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927205180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0.375}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children:
   - {fileID: 227210550}
@@ -2994,7 +2994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.494}
+  m_AnchoredPosition: {x: 0, y: 0.257}
   m_SizeDelta: {x: 704.75, y: 389.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1943832060
@@ -3282,6 +3282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogData: {fileID: 0}
+  DialogText: {fileID: 227210551}
 --- !u!1 &2091366340
 GameObject:
   m_ObjectHideFlags: 0
