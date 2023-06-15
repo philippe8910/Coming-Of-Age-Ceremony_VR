@@ -5,26 +5,31 @@ using UnityEngine;
 public class SevenMMDialogState : IState
 {
     string dialogID;
+    IState levelNextState;
     
-    public SevenMMDialogState(string _dialogID)
+    public SevenMMDialogState(string _dialogID, IState _levelNextState)
     {
         dialogID = _dialogID;
+        levelNextState = _levelNextState;
     }
     
     
     SevenMMActor actor;
     DialogDataDetail dialogDataDetail;
 
+    float gapTimer;
     float timer;
     int dialogIndex;
     public void StateEnter(object _actor)
     {
         actor  = (SevenMMActor)_actor;
 
-        dialogDataDetail = DialogSystem.instance.GetDialogDataDetail(dialogID);
+        dialogDataDetail = actor.GetDialogDataDetail(dialogID);
+        gapTimer = actor.GetDialogGapTimer();
         dialogIndex = 0;
-        timer = 3;
+        timer = gapTimer;
 
+        actor.SetDialogText(dialogDataDetail.sentences[dialogIndex]);
     }
 
     
@@ -32,12 +37,14 @@ public class SevenMMDialogState : IState
     {
         timer += Time.deltaTime;
 
-        if(timer > 3 && dialogIndex < dialogDataDetail.sentences.Count)
+        if(timer > gapTimer && dialogIndex < dialogDataDetail.sentences.Count)
         {
-            DialogSystem.instance.SetDialogText(dialogDataDetail.sentences[dialogIndex]);
+            actor.SetDialogText(dialogDataDetail.sentences[dialogIndex]);
+            
             dialogIndex++;
+            timer = 0;
         }
-        else
+        else if(timer > gapTimer && dialogIndex >= dialogDataDetail.sentences.Count)
         {
             actor.ChangeState(new SevenMMIdleState());
         }
@@ -45,5 +52,6 @@ public class SevenMMDialogState : IState
 
     public void StateExit()
     {
+        actor.CallLevelSystemSetNextState(levelNextState);
     }
 }

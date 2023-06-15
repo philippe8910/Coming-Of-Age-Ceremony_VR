@@ -21,6 +21,11 @@ public class DialogSystem : MonoBehaviour
         return dialogData.dialogDataDetails.Where(t => t.ID == _ID).FirstOrDefault();
     }
 
+    public float GetGapTimer()
+    {
+        return dialogData.gapTimer;
+    }
+
 
     public void SetDialogText(string t)
     {

@@ -32,6 +32,28 @@ public class SevenMMActor : MonoBehaviour
         currentState.StateEnter(this);
     }
 
+
+    public void CallLevelSystemSetNextState(IState nextState)
+    {
+        LevelSystem.instance.ChangeState(nextState);
+    }
+
+    public DialogDataDetail GetDialogDataDetail(string dialogID)
+    {
+        return DialogSystem.instance.GetDialogDataDetail(dialogID);
+    }
+
+    public float GetDialogGapTimer()
+    {
+        return DialogSystem.instance.GetGapTimer();
+    }
+
+    public void SetDialogText(string text)
+    {
+        DialogSystem.instance.SetDialogText(text);
+    }
+    
+
     // private IState SetDefultState(StatesPool _defultState)
     // {
     //     switch(_defultState)

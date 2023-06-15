@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum StatesPool
 {
-    ChoeseGenderState,
+    RoomStartState,
 }
 
 public class LevelSystem : MonoBehaviour
@@ -19,10 +19,10 @@ public class LevelSystem : MonoBehaviour
     IState currentState;
     
 
-   
+   [SerializeField] StatesPool defultState;
     void Start()
     {
-        //currentState = SetDefultState(defultState);
+        currentState = SetDefultState(defultState);
         // currentState = new 
         currentState.StateEnter(this); 
     }
@@ -39,14 +39,24 @@ public class LevelSystem : MonoBehaviour
         currentState.StateEnter(this);
     }
 
-    // private IState SetDefultState(StatesPool _defultState)
-    // {
-    //     switch(_defultState)
-    //     {
-    //         case StatesPool.ChoeseGenderState:
-    //             return new ChoeseGenderState();
-    //         default:
-    //             return null;
-    //     }
-    // }
+    private IState SetDefultState(StatesPool _defultState)
+    {
+        switch(_defultState)
+        {
+            case StatesPool.RoomStartState:
+                return new RoomStartState();
+            default:
+                return null;
+        }
+    }
+
+    public void CallSevenMMActorTalk(string dialogID, IState NextState)
+    {
+        SevenMMActor.instance.ChangeState(new SevenMMDialogState(dialogID, NextState));
+    }
+
+    public void CallMAKABAKAVideoCtrPlayVideo()
+    {
+        MAKABAKAVideoCtr.instance.StartPlayVideo();
+    }
 }
