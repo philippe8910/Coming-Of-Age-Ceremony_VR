@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb9655b72840bf409cd5bfd2c26d363, type: 3}
   m_Name: DialogData
   m_EditorClassIdentifier: 
+  gapTimer: 3
   dialogDataDetails:
   - ID: 1-1
     sentences:

@@ -59,4 +59,14 @@ public class LevelSystem : MonoBehaviour
     {
         MAKABAKAVideoCtr.instance.StartPlayVideo();
     }
+
+    public void ShowFadePhoto()
+    {
+        UserLookPhotoCtr.instance.ShowUserLookPhoto();
+    }
+
+    public void StartFadeToTemple()
+    {
+        RoomBlackHoleCtr.instance.StartFadeToTemple();
+    }
 }

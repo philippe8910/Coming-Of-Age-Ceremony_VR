@@ -53,9 +53,9 @@ public class MAKABAKAVideoCtr : MonoBehaviour
         if(!isFirstEnd)
         {
             isFirstEnd = true;
-            UserLookPhotoCtr.instance.ShowUserLookPhoto();
+            //UserLookPhotoCtr.instance.ShowUserLookPhoto();
+            LevelSystem.instance.ChangeState(new RoomWearClothesState());
         }
-
     }
 
 

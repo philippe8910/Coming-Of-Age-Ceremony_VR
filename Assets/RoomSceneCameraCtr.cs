@@ -33,6 +33,7 @@ public class RoomSceneCameraCtr : MonoBehaviour
                 {
                     isdeceted = false;
                     print("loadScene");
+                    LevelSystem.instance.ChangeState(new RoomFadeToTempleState());
                 }
             }
         }
@@ -45,6 +46,7 @@ public class RoomSceneCameraCtr : MonoBehaviour
     public void StartRayDeceted()
     {
         isdeceted = true;
+        print("strtDected");
     }
 
     private void OnDrawGizmos() {
