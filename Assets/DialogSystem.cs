@@ -26,9 +26,15 @@ public class DialogSystem : MonoBehaviour
         return dialogData.gapTimer;
     }
 
+    public void SetDialogTextActive(bool active)
+    {
+        DialogText.gameObject.SetActive(active);
+    }
+
 
     public void SetDialogText(string t)
     {
+        DialogText.gameObject.SetActive(true);
         DialogText.text = t;
     }
 
