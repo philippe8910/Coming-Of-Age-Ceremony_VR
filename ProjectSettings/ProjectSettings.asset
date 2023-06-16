@@ -46,8 +46,8 @@ PlayerSettings:
   defaultScreenHeight: 1080
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
-  m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 0
+  m_StereoRenderingPath: 2
+  m_ActiveColorSpace: 1
   m_MTRendering: 1
   mipStripping: 0
   numberOfMipsStripped: 0
@@ -137,6 +137,8 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 11400000, guid: 2e93015f39b79aa45a25bb77b6c886c1, type: 2}
+  - {fileID: -9088196845473451009, guid: df6244d9a27b67048bb8559c8b00c861, type: 2}
+  - {fileID: 11400000, guid: d154284179999c446a6686c4ac00213e, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -161,7 +163,7 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 29
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -243,7 +245,7 @@ PlayerSettings:
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 2
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -421,6 +423,9 @@ PlayerSettings:
     m_Automatic: 0
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
+    m_Automatic: 0
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 02000000
     m_Automatic: 0
   m_BuildTargetVRSettings: []
   openGLRequireES31: 0
@@ -692,10 +697,12 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
+    1: ODIN_INSPECTOR;ODIN_INSPECTOR_3
     7: ODIN_INSPECTOR;ODIN_INSPECTOR_3
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
+    Android: 1
     Standalone: 0
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
