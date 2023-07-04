@@ -1,72 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Events;
+using Events._7MMEvent;
+using Project;
 using UnityEngine;
-
-public enum StatesPool
-{
-    RoomStartState,
-}
 
 public class LevelSystem : MonoBehaviour
 {
-    public static LevelSystem instance;
-    private void Awake() {
-        instance = this;
-    }
-
-
-
-    IState currentState;
+    [SerializeField] private MAKABAKAVideoCtr videoCtractor;
+    [SerializeField] private UserLookPhotoCtr userLookPhotoCtr;
     
-
-   [SerializeField] StatesPool defultState;
-    void Start()
+    async void Start()
     {
-        currentState = SetDefultState(defultState);
-        // currentState = new 
-        currentState.StateEnter(this); 
+        videoCtractor = FindObjectOfType<MAKABAKAVideoCtr>();
+        userLookPhotoCtr = FindObjectOfType<UserLookPhotoCtr>();
+        
+        await Task.Delay(100);
+        
+        EventBus.Post(new StartGameDetected());
+        EventBus.Post(new DialogDetected(delegate { EventBus.Post(new VideoStartDetected()); }, "1-1"));
+        
+        EventBus.Subscribe<VideoStartDetected>(OnVideoStartDetected);
+        EventBus.Subscribe<VideoEndDetected>(OnVideoEndDetected);
+        EventBus.Subscribe<SwitchSceneToTempleDetected>(OnSwitchSceneToTempleDetected);
+    }
+    private void OnVideoStartDetected(VideoStartDetected obj)
+    {
+        videoCtractor.StartPlayVideo();
     }
 
-    void Update()
+    private void OnVideoEndDetected(VideoEndDetected obj)
     {
-        currentState.StateStay();
+        userLookPhotoCtr.ShowUserLookPhoto();
     }
-
-    public void ChangeState(IState newState)
+    
+    private void OnSwitchSceneToTempleDetected(SwitchSceneToTempleDetected obj)
     {
-        currentState.StateExit();
-        currentState = newState;
-        currentState.StateEnter(this);
-    }
-
-    private IState SetDefultState(StatesPool _defultState)
-    {
-        switch(_defultState)
-        {
-            case StatesPool.RoomStartState:
-                return new RoomStartState();
-            default:
-                return null;
-        }
-    }
-
-    public void CallSevenMMActorTalk(string dialogID, IState NextState)
-    {
-        SevenMMActor.instance.ChangeState(new SevenMMDialogState(dialogID, NextState));
-    }
-
-    public void CallMAKABAKAVideoCtrPlayVideo()
-    {
-        MAKABAKAVideoCtr.instance.StartPlayVideo();
-    }
-
-    public void ShowFadePhoto()
-    {
-        UserLookPhotoCtr.instance.ShowUserLookPhoto();
-    }
-
-    public void StartFadeToTemple()
-    {
-        RoomBlackHoleCtr.instance.StartFadeToTemple();
+        
     }
 }

@@ -8,8 +8,6 @@ public class RoomPlayVideoState : IState
     public void StateEnter(object _actor)
     {
         actor = (LevelSystem)_actor;
-
-        actor.CallMAKABAKAVideoCtrPlayVideo();
     }
 
     public void StateStay()

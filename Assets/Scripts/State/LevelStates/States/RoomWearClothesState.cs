@@ -12,7 +12,6 @@ public class RoomWearClothesState : IState
         //呼叫衣櫃打開之類的
         //穿完衣服回呼(RoomFadePhotoState)叫明信片(轉場照片)飛出
         //測試先跳過
-        actor.ChangeState(new RoomFadePhotoState());
     }
 
     public void StateStay()

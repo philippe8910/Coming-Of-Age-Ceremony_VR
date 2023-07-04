@@ -9,8 +9,6 @@ public class RoomFadePhotoState : IState
     {
         actor = (LevelSystem)_actor;
 
-        actor.ShowFadePhoto();
-
     }
 
     public void StateStay()

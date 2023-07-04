@@ -4,15 +4,12 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using DG.Tweening;
+using Events;
+using Project;
 using Sirenix.OdinInspector;
 
 public class MAKABAKAVideoCtr : MonoBehaviour
 {
-    public static MAKABAKAVideoCtr instance;
-    private void Awake() {
-        instance = this;
-    }
-
     VideoPlayer videoPlayer;
     CanvasGroup canvasGroup;
 
@@ -54,18 +51,9 @@ public class MAKABAKAVideoCtr : MonoBehaviour
         {
             isFirstEnd = true;
             //UserLookPhotoCtr.instance.ShowUserLookPhoto();
-            LevelSystem.instance.ChangeState(new RoomWearClothesState());
+            
+            EventBus.Post(new VideoEndDetected());
         }
     }
-
-
-
-
-
-
-
-    void Update()
-    {
-        
-    }
+    
 }

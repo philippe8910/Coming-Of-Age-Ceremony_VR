@@ -8,7 +8,6 @@ public class RoomFadeToTempleState : IState
     public void StateEnter(object _actor)
     {
         actor = (LevelSystem)_actor;
-        actor.StartFadeToTemple();
     }
 
     public void StateStay()

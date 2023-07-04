@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Events;
+using Project;
 
 public class UserLookPhotoCtr : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class UserLookPhotoCtr : MonoBehaviour
         //     .SetEase(Ease.Linear);
         transform.DOMoveY(1, 1).onComplete += delegate{
             RoomSceneCameraCtr.instance.StartRayDeceted();
+            EventBus.Post(new SwitchSceneToTempleDetected());
         };
     }
 }

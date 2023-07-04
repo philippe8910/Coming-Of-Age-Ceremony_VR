@@ -1,52 +1,75 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Events._7MMEvent;
+using Project;
+using Sirenix.OdinInspector;
 using UnityEngine.UI;
 
 public class DialogSystem : MonoBehaviour
 {
-    public static DialogSystem instance;
+    [SerializeField] Text dialogText;
+    
+    private void Start()
+    {
+        EventBus.Subscribe<DialogDetected>(OnDialogDetected);
+    }
 
-    [SerializeField] DialogData dialogData;
-    [SerializeField] Text DialogText;
-    private void Awake() {
-        instance = this;
-        dialogData = Resources.Load<DialogData>("ScriptableObject/DialogData");
+    [Button]
+    public void Test()
+    {
+        EventBus.Post(new DialogDetected(null, "1-1"));
+    }
+
+    
+    private void OnDialogDetected(DialogDetected obj)
+    {
+        StopAllCoroutines();
+        
+        var events = obj.OnDialogEndEvent;
+        var id = obj.dialogID;
+
+        StartCoroutine(startDialog());
+
+        IEnumerator startDialog()
+        {
+            var dialogData = Resources.Load<DialogData>("ScriptableObject/DialogData");
+            var dialogDataList = GetDialogDataDetail(id, dialogData);
+            
+            foreach (var sentence in dialogDataList.sentences)
+            {
+                SetDialogText(sentence);
+                yield return new WaitForSeconds(GetGapTime(dialogData));
+            }
+            
+            events?.Invoke();
+            yield return null;
+        }
     }
 
 
-    public DialogDataDetail GetDialogDataDetail(string _ID)
+    public DialogDataDetail GetDialogDataDetail(string _ID , DialogData dialogData)
     {
         return dialogData.dialogDataDetails.Where(t => t.ID == _ID).FirstOrDefault();
     }
 
-    public float GetGapTimer()
+    public float GetGapTime(DialogData dialogData)
     {
         return dialogData.gapTimer;
     }
 
     public void SetDialogTextActive(bool active)
     {
-        DialogText.gameObject.SetActive(active);
+        dialogText.gameObject.SetActive(active);
     }
 
 
     public void SetDialogText(string t)
     {
-        DialogText.gameObject.SetActive(true);
-        DialogText.text = t;
+        dialogText.gameObject.SetActive(true);
+        dialogText.text = t;
     }
 
-    // void Start()
-    // {
-        
-    // }
-
-    // void Update()
-    // {
-        
-    // }
-
-    
 }

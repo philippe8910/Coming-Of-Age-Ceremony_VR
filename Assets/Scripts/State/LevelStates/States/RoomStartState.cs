@@ -8,8 +8,6 @@ public class RoomStartState : IState
     public void StateEnter(object _actor)
     {
         actor = (LevelSystem)_actor;
-
-        actor.CallSevenMMActorTalk("1-1", new RoomPlayVideoState());
     }
 
     public void StateStay()

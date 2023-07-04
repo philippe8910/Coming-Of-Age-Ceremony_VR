@@ -33,7 +33,6 @@ public class RoomSceneCameraCtr : MonoBehaviour
                 {
                     isdeceted = false;
                     print("loadScene");
-                    LevelSystem.instance.ChangeState(new RoomFadeToTempleState());
                 }
             }
         }
