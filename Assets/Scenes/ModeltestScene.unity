@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1806680513116206669, guid: 2efda93ea8c44cc45a0eb47d959895b4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4918a1040b4bf3d49930e16da7c8e382, type: 2}
     - target: {fileID: -1461304994638716399, guid: 2efda93ea8c44cc45a0eb47d959895b4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -460,6 +464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RiceDumplingPlate
       objectReference: {fileID: 0}
+    - target: {fileID: 4121060940235617765, guid: a36611ad046de40469182fddb5ed934a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c4638210f5cd0cb41a1938e69cce87ab, type: 2}
     - target: {fileID: 4121060940235617765, guid: a36611ad046de40469182fddb5ed934a, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
