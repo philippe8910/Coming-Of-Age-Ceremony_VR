@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Events;
 using Events._7MMEvent;
 using Project;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSystem : MonoBehaviour
 {
@@ -16,6 +14,8 @@ public class LevelSystem : MonoBehaviour
     {
         videoCtractor = FindObjectOfType<MAKABAKAVideoCtr>();
         userLookPhotoCtr = FindObjectOfType<UserLookPhotoCtr>();
+        
+        SceneManager.activeSceneChanged += delegate(Scene arg0, Scene scene) { EventBus.ClearAllAction(); };
         
         await Task.Delay(100);
         

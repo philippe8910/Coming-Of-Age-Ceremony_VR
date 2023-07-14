@@ -7,8 +7,4 @@ public class SevenMMActor : Singleton<SevenMMActor>
 {
     
     
-    private void Start()
-    {
-        
-    }
 }
