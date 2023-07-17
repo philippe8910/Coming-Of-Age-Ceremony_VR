@@ -20,7 +20,14 @@ public class LevelSystem : MonoBehaviour
         await Task.Delay(100);
         
         EventBus.Post(new StartGameDetected());
-        EventBus.Post(new DialogDetected(delegate { EventBus.Post(new VideoStartDetected()); }, "1-1"));
+
+        EventBus.Post(new DialogDetected("1-1", delegate{ 
+            EventBus.Post(new DialogDetected("1-2", delegate{
+                EventBus.Post(new DialogDetected("1-3", delegate{
+                    EventBus.Post(new VideoStartDetected());
+                }));
+            }));
+        }));
         
         EventBus.Subscribe<VideoStartDetected>(OnVideoStartDetected);
         EventBus.Subscribe<VideoEndDetected>(OnVideoEndDetected);
@@ -33,7 +40,14 @@ public class LevelSystem : MonoBehaviour
 
     private void OnVideoEndDetected(VideoEndDetected obj)
     {
-        userLookPhotoCtr.ShowUserLookPhoto();
+        EventBus.Post(new DialogDetected("1-4", delegate{
+            EventBus.Post(new DialogDetected("1-5", delegate{
+                EventBus.Post(new DialogDetected("1-6", delegate{
+                    userLookPhotoCtr.ShowUserLookPhoto();
+                }));
+            }));
+        }));
+        
     }
     
     private void OnSwitchSceneToTempleDetected(SwitchSceneToTempleDetected obj)

@@ -12,6 +12,7 @@ using DG.Tweening;
 public class DialogSystem : MonoBehaviour
 {
     [SerializeField] Text dialogText;
+    [SerializeField] GameObject dialogTextParent;
     [SerializeField] GameObject dialogCanvas;
     
     private void Start()
@@ -24,14 +25,14 @@ public class DialogSystem : MonoBehaviour
     [Button]
     public void Test()
     {
-        EventBus.Post(new DialogDetected(null, "1-1"));
+        EventBus.Post(new DialogDetected("1-1", null));
     }
 
     
     private void OnDialogDetected(DialogDetected obj)
     {
         StopAllCoroutines();
-        SetDialogTextActive(true);
+        
         
         var events = obj.OnDialogEndEvent;
         var id = obj.dialogID;
@@ -45,19 +46,25 @@ public class DialogSystem : MonoBehaviour
             var dialogData = Resources.Load<DialogData>("ScriptableObject/DialogData");
             var dialogDataList = GetDialogDataDetail(id, dialogData);
 
-            transform.DOMove(dialogDataList.dialogPosition, 1);
-            transform.DORotate(dialogDataList.dialogRotation, 1);
+            SetDialogTextActive(true);
+
+            dialogCanvas.transform.DOMove(dialogDataList.dialogPosition, 1);
+            dialogCanvas.transform.DORotate(dialogDataList.dialogRotation, 1);
             
+            
+
             foreach (var sentence in dialogDataList.sentences)
             {
                 SetDialogText(sentence);
                 SetRandomSpineAni();
                 yield return new WaitForSeconds(GetGapTime(dialogData));
             }
+
+            SetDialogTextActive(false);
             
             events?.Invoke();
-            SetDialogTextActive(false);
-            SetdefaultSpineAni();
+            
+            //SetdefaultSpineAni();
             yield return null;
         }
     }
@@ -75,13 +82,13 @@ public class DialogSystem : MonoBehaviour
 
     public void SetDialogTextActive(bool active)
     {
-        dialogText.transform.parent.gameObject.SetActive(active);
+        dialogTextParent.SetActive(active);
     }
 
 
     public void SetDialogText(string t)
     {
-        dialogText.gameObject.SetActive(true);
+        dialogTextParent.gameObject.SetActive(true);
         dialogText.text = t;
     }
 

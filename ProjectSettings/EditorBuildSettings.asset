@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/RoomScene.unity
+    guid: dec70e1325aa91d47af1c093a8972f88
+  - enabled: 1
     path: Assets/Scenes/TempleScene.unity
     guid: 4913a1f04c5f1f641951dbc0b38082b7
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Oculus/Interaction/Samples/Scenes/Examples/HandGrabExamples.unity
     guid: 39ae0e546b9edc0408d3b11c6a7c2814
-  - enabled: 1
-    path: Assets/Scenes/RoomScene.unity
-    guid: dec70e1325aa91d47af1c093a8972f88
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

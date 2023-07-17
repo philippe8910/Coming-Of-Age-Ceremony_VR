@@ -1188,7 +1188,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430484332}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -2131,7 +2131,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166342837}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 286562aa6df8cc340bc7340d1d8a82ae, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 22382a8ad3bf3c443ba44461e05a66ad, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 2139555878}
@@ -2142,7 +2142,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_PlaybackSpeed: 3
+  m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
@@ -2896,17 +2896,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927205180}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7}
   m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
   m_Children:
   - {fileID: 1451590632}
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.55, y: 1.3}
+  m_AnchoredPosition: {x: 0.7, y: 1}
   m_SizeDelta: {x: 704.75, y: 389.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1927205185
@@ -3111,6 +3111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 227210551}
+  dialogTextParent: {fileID: 1451590631}
   dialogCanvas: {fileID: 1927205180}
 --- !u!1 &2091366340
 GameObject:

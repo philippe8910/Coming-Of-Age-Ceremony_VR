@@ -8,7 +8,7 @@ namespace Events._7MMEvent
 
         public string dialogID;
 
-        public DialogDetected(Action _action , string id)
+        public DialogDetected(string id, Action _action)
         {
             OnDialogEndEvent = _action;
             dialogID = id;
