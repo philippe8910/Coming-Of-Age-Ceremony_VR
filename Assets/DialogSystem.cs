@@ -27,6 +27,7 @@ public class DialogSystem : MonoBehaviour
     private void OnDialogDetected(DialogDetected obj)
     {
         StopAllCoroutines();
+        SetDialogTextActive(true);
         
         var events = obj.OnDialogEndEvent;
         var id = obj.dialogID;
@@ -46,6 +47,7 @@ public class DialogSystem : MonoBehaviour
             }
             
             events?.Invoke();
+            SetDialogTextActive(false);
             SetdefaultSpineAni();
             yield return null;
         }
@@ -64,7 +66,7 @@ public class DialogSystem : MonoBehaviour
 
     public void SetDialogTextActive(bool active)
     {
-        dialogText.gameObject.SetActive(active);
+        dialogText.transform.parent.gameObject.SetActive(active);
     }
 
 
