@@ -7,13 +7,17 @@ using Events._7MMEvent;
 using Project;
 using Sirenix.OdinInspector;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DialogSystem : MonoBehaviour
 {
     [SerializeField] Text dialogText;
+    [SerializeField] GameObject dialogCanvas;
     
     private void Start()
     {
+        //dialogCanvas.transform.position = Vector3.zero;
+        //dialogCanvas.transform.rotation = Quaternion.Euler(0,90,0);
         EventBus.Subscribe<DialogDetected>(OnDialogDetected);
     }
 
@@ -32,12 +36,17 @@ public class DialogSystem : MonoBehaviour
         var events = obj.OnDialogEndEvent;
         var id = obj.dialogID;
 
+        
+
         StartCoroutine(startDialog());
 
         IEnumerator startDialog()
         {
             var dialogData = Resources.Load<DialogData>("ScriptableObject/DialogData");
             var dialogDataList = GetDialogDataDetail(id, dialogData);
+
+            transform.DOMove(dialogDataList.dialogPosition, 1);
+            transform.DORotate(dialogDataList.dialogRotation, 1);
             
             foreach (var sentence in dialogDataList.sentences)
             {

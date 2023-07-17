@@ -13,5 +13,7 @@ public class DialogData : ScriptableObject
 public class DialogDataDetail
 {
     public string ID;
+    public Vector3 dialogPosition;
+    public Vector3 dialogRotation;
     public List<string> sentences;
 }
