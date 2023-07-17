@@ -1063,7 +1063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3527223950066649908, guid: 36b537dd08d31264593df0f332e63f4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.354
+      value: -0.605
       objectReference: {fileID: 0}
     - target: {fileID: 3527223950066649908, guid: 36b537dd08d31264593df0f332e63f4f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1071,7 +1071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3527223950066649908, guid: 36b537dd08d31264593df0f332e63f4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.689
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3527223950066649908, guid: 36b537dd08d31264593df0f332e63f4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1865,7 +1865,7 @@ GameObject:
   - component: {fileID: 1166342838}
   - component: {fileID: 1166342840}
   m_Layer: 0
-  m_Name: MAKABALA_VideoCtr
+  m_Name: MAKABAKA_VideoCtr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1966,7 +1966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3527223950066649908, guid: 36b537dd08d31264593df0f332e63f4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.669
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3527223950066649908, guid: 36b537dd08d31264593df0f332e63f4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2031,7 +2031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727455273524035796, guid: 46b6048a2f98db741aab0c488496b980, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.313
+      value: -0.605
       objectReference: {fileID: 0}
     - target: {fileID: 8727455273524035796, guid: 46b6048a2f98db741aab0c488496b980, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2039,7 +2039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727455273524035796, guid: 46b6048a2f98db741aab0c488496b980, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8727455273524035796, guid: 46b6048a2f98db741aab0c488496b980, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2397,7 +2397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7376139163260167405, guid: 76164061025efc341b1510990754199b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.86
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7376139163260167405, guid: 76164061025efc341b1510990754199b, type: 3}
       propertyPath: m_LocalRotation.w
