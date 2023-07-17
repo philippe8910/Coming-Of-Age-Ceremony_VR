@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Events;
+using Events._7MMEvent;
 using Project;
 using UnityEngine;
 
@@ -18,9 +19,14 @@ public class TempleLevel : MonoBehaviour
 
     async void Start()
     {
-        EventBus.Post(new TempleLevelStartDetected());
+        
+        
 
         await Task.Delay(100);
+
+        EventBus.Post(new DialogDetected("2-1", delegate{
+            EventBus.Post(new TempleLevelStartDetected());
+        }));
         
         EventBus.Subscribe<StartPlaceObjectLevelDetected>(OnStartPlaceObjectLevelDetected);
         EventBus.Subscribe<PassPlacePointLevelDetected>(OnPassPlacePointLevelDetected);
@@ -30,17 +36,22 @@ public class TempleLevel : MonoBehaviour
     private void OnPassLoopRoundDetected(PassLoopRoundDetected obj)
     {
         ///繞完轎
+        EventBus.Post(new DialogDetected("2-3", null));
     }
 
 
     private void OnPassPlacePointLevelDetected(PassPlacePointLevelDetected obj)
     {
-        ///開始抓取物件
+        ///抓取物件完成
         
+        EventBus.Post(new DialogDetected("2-2", null));
+
         teleportPoints.ForEach(delegate(GameObject o)
         {
             o.SetActive(true);
         });
+
+
     }
 
     private void OnStartPlaceObjectLevelDetected(StartPlaceObjectLevelDetected obj)
