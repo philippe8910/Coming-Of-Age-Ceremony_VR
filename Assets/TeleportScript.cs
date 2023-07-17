@@ -31,6 +31,13 @@ public class TeleportScript : MonoBehaviour
                     text.text = "Hit";
                     pos = hit.point;
                     StartCoroutine(Teleport(pos));
+
+                    if (hit.collider.GetComponent<TeleportEvent>())
+                    {
+                        var events = hit.collider.GetComponent<TeleportEvent>();
+
+                        events.TeleportEnd();
+                    }
                 }
             }
         }
