@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Events;
+using Project;
 using UnityEngine;
 
 public class RoomSceneCameraCtr : MonoBehaviour
@@ -32,7 +34,7 @@ public class RoomSceneCameraCtr : MonoBehaviour
                 if(stareAtTime > 3)
                 {
                     isdeceted = false;
-                    print("loadScene");
+                    EventBus.Post(new SwitchSceneToTempleDetected());
                 }
             }
         }

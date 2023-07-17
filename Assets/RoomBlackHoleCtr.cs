@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Events;
+using Project;
 using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +20,16 @@ public class RoomBlackHoleCtr : MonoBehaviour
         playerPos = FindObjectOfType<RoomSceneCameraCtr>().transform;
     }
 
+    private void Start()
+    {
+        EventBus.Subscribe<SwitchSceneToTempleDetected>(OnSwitchSceneToTempleDetected);
+    }
+
+    private void OnSwitchSceneToTempleDetected(SwitchSceneToTempleDetected obj)
+    {
+        StartFadeToTemple();
+    }
+
     [Button]
     public void StartFadeToTemple()
     {
@@ -26,7 +39,7 @@ public class RoomBlackHoleCtr : MonoBehaviour
         // DOTween.To(() => tra , x => canvasGroup.alpha = x , 1 ,1)
         //     .SetEase(Ease.Linear);
 
-        transform.DOMove(playerPos.position, 1f).onComplete += delegate
+        transform.DOMove(playerPos.position, 4f).onComplete += delegate
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         };
