@@ -41,10 +41,12 @@ public class DialogSystem : MonoBehaviour
             foreach (var sentence in dialogDataList.sentences)
             {
                 SetDialogText(sentence);
+                SetRandomSpineAni();
                 yield return new WaitForSeconds(GetGapTime(dialogData));
             }
             
             events?.Invoke();
+            SetdefaultSpineAni();
             yield return null;
         }
     }
@@ -70,6 +72,16 @@ public class DialogSystem : MonoBehaviour
     {
         dialogText.gameObject.SetActive(true);
         dialogText.text = t;
+    }
+
+    public void SetRandomSpineAni()
+    {
+        SevenMMSpineCtr.instance.SetRandomSpineAni();
+    }
+
+    public void SetdefaultSpineAni()
+    {
+        SevenMMSpineCtr.instance.SetdefaultSpineAni();
     }
 
 }
