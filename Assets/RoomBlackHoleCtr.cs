@@ -41,7 +41,9 @@ public class RoomBlackHoleCtr : MonoBehaviour
 
         transform.DOMove(playerPos.position, 4f).onComplete += delegate
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            EventBus.Post(new ChangeScenesEffectDetected(delegate
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); }));
         };
         
         blackHole.transform.LookAt(playerPos);

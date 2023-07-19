@@ -29,6 +29,8 @@ public class ScenesChangeEffect : MonoBehaviour
         DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 1, speed).onComplete += delegate
         {
             //全暗
+            obj.events?.Invoke();
+            
             DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 0, speed).onComplete += delegate
             {
                 //全亮
