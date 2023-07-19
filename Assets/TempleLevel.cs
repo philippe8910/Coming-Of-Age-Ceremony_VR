@@ -94,7 +94,7 @@ public class TempleLevel : MonoBehaviour
         ///繞完一圈
         loopCount++;
 
-        if (loopCount >= 2)
+        if (loopCount >= 3)
         {
             EventBus.Post(new PassLoopRoundDetected());
         }
