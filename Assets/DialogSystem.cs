@@ -12,6 +12,7 @@ using DG.Tweening;
 public class DialogSystem : MonoBehaviour
 {
     [SerializeField] Text dialogText;
+    [SerializeField] Text nameText;
     [SerializeField] GameObject dialogTextParent;
     [SerializeField] GameObject dialogCanvas;
     
@@ -90,6 +91,18 @@ public class DialogSystem : MonoBehaviour
     {
         dialogTextParent.gameObject.SetActive(true);
         dialogText.text = t;
+    }
+
+    public void SetDialogTalkName(Speaker speaker)
+    {
+        if(speaker == Speaker.SevenMM)
+        {
+            nameText.text = "織女:";
+        }
+        else
+        {
+            nameText.text = "プレイヤー:";
+        }
     }
 
     public void SetRandomSpineAni()
