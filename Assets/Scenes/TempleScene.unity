@@ -292,15 +292,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875744320609543860, guid: 0b729b3237bc9244495cd88b38497acc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12
+      value: 17.9496
       objectReference: {fileID: 0}
     - target: {fileID: 8875744320609543860, guid: 0b729b3237bc9244495cd88b38497acc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12
+      value: 17.9496
       objectReference: {fileID: 0}
     - target: {fileID: 8875744320609543860, guid: 0b729b3237bc9244495cd88b38497acc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 12
+      value: 17.9496
       objectReference: {fileID: 0}
     - target: {fileID: 8875744320609543860, guid: 0b729b3237bc9244495cd88b38497acc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8875744320609543860, guid: 0b729b3237bc9244495cd88b38497acc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.17
+      value: 5.45
       objectReference: {fileID: 0}
     - target: {fileID: 8875744320609543860, guid: 0b729b3237bc9244495cd88b38497acc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2424,7 +2424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 1207404544}
-  nameText: {fileID: 735710701}
+  nameText: {fileID: 0}
   dialogTextParent: {fileID: 650238324}
   dialogCanvas: {fileID: 1954026189}
 --- !u!4 &1107340455
@@ -4614,7 +4614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7535503789846955124, guid: 765fd2ac33ac9ad4eb5530b39bca6411, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 7535503789846955124, guid: 765fd2ac33ac9ad4eb5530b39bca6411, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4622,7 +4622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7535503789846955124, guid: 765fd2ac33ac9ad4eb5530b39bca6411, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.53
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 7535503789846955124, guid: 765fd2ac33ac9ad4eb5530b39bca6411, type: 3}
       propertyPath: m_LocalRotation.w
