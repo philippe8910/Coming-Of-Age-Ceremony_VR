@@ -58,6 +58,8 @@ public class DialogSystem : MonoBehaviour
             {
                 SetDialogTalkName(sentenceDetail.speaker);
                 SetDialogText(sentenceDetail.sentence);
+                DetectException(sentenceDetail.sentence);
+                
                 SetRandomSpineAni();
                 yield return new WaitForSeconds(GetGapTime(dialogData));
             }
