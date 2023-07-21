@@ -56,6 +56,7 @@ public class DialogSystem : MonoBehaviour
 
             foreach (var sentenceDetail in dialogDataList.sentenceDetails)
             {
+                SetDialogTalkName(sentenceDetail.speaker);
                 SetDialogText(sentenceDetail.sentence);
                 SetRandomSpineAni();
                 yield return new WaitForSeconds(GetGapTime(dialogData));

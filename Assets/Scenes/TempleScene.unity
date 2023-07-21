@@ -2424,6 +2424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 1207404544}
+  nameText: {fileID: 735710701}
   dialogTextParent: {fileID: 650238324}
   dialogCanvas: {fileID: 1954026189}
 --- !u!4 &1107340455
