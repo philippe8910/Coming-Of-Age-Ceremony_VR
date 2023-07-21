@@ -77,24 +77,32 @@ public class DialogSystem : MonoBehaviour
         return dialogData.dialogDataDetails.Where(t => t.ID == _ID).FirstOrDefault();
     }
 
-    public float GetGapTime(DialogData dialogData)
+    float GetGapTime(DialogData dialogData)
     {
         return dialogData.gapTimer;
     }
 
-    public void SetDialogTextActive(bool active)
+    void SetDialogTextActive(bool active)
     {
         dialogTextParent.SetActive(active);
     }
 
 
-    public void SetDialogText(string t)
+    void SetDialogText(string t)
     {
         dialogTextParent.gameObject.SetActive(true);
         dialogText.text = t;
     }
 
-    public void SetDialogTalkName(Speaker speaker)
+    void DetectException(string sentence)
+    {
+        if(sentence == "（マウスクリックの音）")
+        {
+            //播放滑鼠點擊的聲音
+        }
+    }
+
+    void SetDialogTalkName(Speaker speaker)
     {
         if(speaker == Speaker.SevenMM)
         {
