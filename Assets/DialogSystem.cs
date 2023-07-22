@@ -49,8 +49,8 @@ public class DialogSystem : MonoBehaviour
 
             SetDialogTextActive(true);
 
-            dialogCanvas.transform.DOMove(dialogDataList.dialogPosition, 1);
-            dialogCanvas.transform.DORotate(dialogDataList.dialogRotation, 1);
+            // dialogCanvas.transform.DOMove(dialogDataList.dialogPosition, 1);
+            // dialogCanvas.transform.DORotate(dialogDataList.dialogRotation, 1);
             
             
 
