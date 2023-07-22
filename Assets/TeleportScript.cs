@@ -53,7 +53,7 @@ public class TeleportScript : MonoBehaviour
 
     private IEnumerator Teleport(Vector3 destination)
     {
-        cameraRig.transform.position = destination;
+        cameraRig.transform.position = new Vector3(destination.x ,cameraRig.transform.position.y , destination.z);
 
         // 在這裡可以加入任何傳送後的效果或動畫
 

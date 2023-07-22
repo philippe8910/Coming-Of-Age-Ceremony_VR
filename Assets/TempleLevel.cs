@@ -19,19 +19,23 @@ public class TempleLevel : MonoBehaviour
 
     async void Start()
     {
-        
-        
-
         await Task.Delay(100);
 
         EventBus.Post(new DialogDetected("2-1", delegate{
             EventBus.Post(new TempleLevelStartDetected());
+            EventBus.Post(new StartPlaceObjectLevelDetected());
         }));
+        
+        placeObjectPack.ForEach(delegate(GameObject o)
+        {
+            o.SetActive(false);
+        });
         
         EventBus.Subscribe<StartPlaceObjectLevelDetected>(OnStartPlaceObjectLevelDetected);
         EventBus.Subscribe<PassPlacePointLevelDetected>(OnPassPlacePointLevelDetected);
         EventBus.Subscribe<PassLoopRoundDetected>(OnPassLoopRoundDetected);
     }
+    
 
     private void OnPassLoopRoundDetected(PassLoopRoundDetected obj)
     {

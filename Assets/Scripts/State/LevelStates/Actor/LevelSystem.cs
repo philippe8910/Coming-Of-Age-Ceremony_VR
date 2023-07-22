@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 public class LevelSystem : MonoBehaviour
 {
     [SerializeField] private MAKABAKAVideoCtr videoCtractor;
-    [SerializeField] private UserLookPhotoCtr userLookPhotoCtr;
+    [SerializeField] private ClothFadeOut clothFadeOut;
     
     async void Start()
     {
         videoCtractor = FindObjectOfType<MAKABAKAVideoCtr>();
-        userLookPhotoCtr = FindObjectOfType<UserLookPhotoCtr>();
+        clothFadeOut = FindObjectOfType<ClothFadeOut>();
         
         SceneManager.activeSceneChanged += delegate(Scene arg0, Scene scene) { EventBus.ClearAllAction(); };
         
@@ -43,7 +43,7 @@ public class LevelSystem : MonoBehaviour
         EventBus.Post(new DialogDetected("1-4", delegate{
             EventBus.Post(new DialogDetected("1-5", delegate{
                 EventBus.Post(new DialogDetected("1-6", delegate{
-                    userLookPhotoCtr.ShowUserLookPhoto();
+                    clothFadeOut.StartFadeOut();
                 }));
             }));
         }));

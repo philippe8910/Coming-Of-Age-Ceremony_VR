@@ -26,6 +26,7 @@ public class MAKABAKAVideoCtr : MonoBehaviour
         //     .SetEase(Ease.Linear).onComplete += delegate{
                 
         // };
+        canvasGroup.alpha = 0;
     }
 
 
