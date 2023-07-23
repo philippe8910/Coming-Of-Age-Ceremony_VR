@@ -1,4 +1,6 @@
 using System.Collections;
+using Events;
+using Project;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -21,7 +23,8 @@ public class TeleportScript : MonoBehaviour
         if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude > 0.1f)
         {
             rayRender.gameObject.SetActive(true);
-            
+            StopAllCoroutines();
+
             RaycastHit hit;
             if (Physics.Raycast(playerController.position, playerController.forward, out hit, teleportRange))
             {
@@ -29,15 +32,15 @@ public class TeleportScript : MonoBehaviour
                 if (hit.collider.CompareTag("TeleportPoint"))
                 {
                     //text.text = "Hit";
-                    pos = hit.point;
-                    StartCoroutine(Teleport(pos));
-
                     if (hit.collider.GetComponent<TeleportEvent>())
                     {
                         var events = hit.collider.GetComponent<TeleportEvent>();
 
                         events.TeleportEnd();
                     }
+                    
+                    pos = hit.point;
+                    StartCoroutine(Teleport(pos));
                 }
             }
         }
@@ -46,14 +49,15 @@ public class TeleportScript : MonoBehaviour
         if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude < 0.1f)
         {
             rayRender.gameObject.SetActive(false);
-            
-            if(pos != Vector3.zero) StartCoroutine(Teleport(pos));
         }
     }
 
     private IEnumerator Teleport(Vector3 destination)
     {
-        cameraRig.transform.position = new Vector3(destination.x ,cameraRig.transform.position.y , destination.z);
+        EventBus.Post(new TeleportEffectDetected(delegate
+        {
+            cameraRig.transform.position = new Vector3(destination.x ,cameraRig.transform.position.y , destination.z);
+        }));
 
         // 在這裡可以加入任何傳送後的效果或動畫
 

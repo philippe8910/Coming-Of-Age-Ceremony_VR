@@ -25,6 +25,7 @@ public class TeleportEvent : MonoBehaviour
     [Button]
     public void TeleportEnd()
     {
+        transform.gameObject.SetActive(false);
         OnTeleportEnd?.Invoke();
     }
     

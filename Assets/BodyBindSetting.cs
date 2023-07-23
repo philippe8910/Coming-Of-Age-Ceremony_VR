@@ -9,7 +9,7 @@ public class BodyBindSetting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = bodyRotation.rotation;
-        transform.transform.position = new Vector3(transform.position.x, bodPosition.position.y ,transform.position.z);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x , bodyRotation.rotation.eulerAngles.y , transform.rotation.eulerAngles.z);
+        transform.position = new Vector3(bodPosition.position.x, transform.position.y ,bodPosition.position.z);
     }
 }

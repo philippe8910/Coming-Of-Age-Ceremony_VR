@@ -20,6 +20,24 @@ public class ScenesChangeEffect : MonoBehaviour
         };
         
         EventBus.Subscribe<ChangeScenesEffectDetected>(OnChangeScenesEffectDetected);
+        EventBus.Subscribe<TeleportEffectDetected>(OnTeleportEffectDetected);
+    }
+
+    private void OnTeleportEffectDetected(TeleportEffectDetected obj)
+    {
+        var canvasGroup = GetComponent<CanvasGroup>();
+        
+        DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 1, 0.2f).onComplete += delegate
+        {
+            //全暗
+            obj.events?.Invoke();
+            
+            DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 0, 0.2f).onComplete += delegate
+            {
+                //全亮
+                DOTween.KillAll();
+            };
+        };
     }
 
     private void OnChangeScenesEffectDetected(ChangeScenesEffectDetected obj)
