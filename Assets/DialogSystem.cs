@@ -16,6 +16,8 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] Text nameText;
     [SerializeField] GameObject dialogTextParent;
     [SerializeField] GameObject dialogCanvas;
+
+    [SerializeField] Animator animator;
     
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] audioClips;
@@ -63,14 +65,17 @@ public class DialogSystem : MonoBehaviour
                 if (sentenceDetail.sentence.Length <= 8)
                 {
                     audioSource.clip = audioClips[0];
+                    animator.Play("Orihime_Talk_0");
                 }
                 else if(sentenceDetail.sentence.Length > 8 && sentenceDetail.sentence.Length < 18)
                 {
                     audioSource.clip = audioClips[1];
+                    animator.Play("Orihime_Talk_1");
                 }
                 else
                 {
                     audioSource.clip = audioClips[2];
+                    animator.Play("Orihime_Talk_2");
                 }
 
 
