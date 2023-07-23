@@ -15,7 +15,7 @@ public class TeleportScript : MonoBehaviour
 
     private void Update()
     {
-        text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
+        //text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
         
         // 檢測右搖桿是否被推動
         if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude > 0.1f)
@@ -28,7 +28,7 @@ public class TeleportScript : MonoBehaviour
                 // 檢查是否碰撞到傳送點
                 if (hit.collider.CompareTag("TeleportPoint"))
                 {
-                    text.text = "Hit";
+                    //text.text = "Hit";
                     pos = hit.point;
                     StartCoroutine(Teleport(pos));
 

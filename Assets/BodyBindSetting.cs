@@ -10,6 +10,6 @@ public class BodyBindSetting : MonoBehaviour
     void Update()
     {
         transform.rotation = bodyRotation.rotation;
-        transform.transform.position = new Vector3(bodPosition.position.x, transform.position.y ,bodPosition.position.z);
+        transform.transform.position = new Vector3(transform.position.x, bodPosition.position.y ,transform.position.z);
     }
 }

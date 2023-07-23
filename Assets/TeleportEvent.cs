@@ -26,8 +26,6 @@ public class TeleportEvent : MonoBehaviour
     public void TeleportEnd()
     {
         OnTeleportEnd?.Invoke();
-        StartVibration(0.1f, 0.5f);
-        
     }
     
     private void StartVibration(float duration, float amplitude)
