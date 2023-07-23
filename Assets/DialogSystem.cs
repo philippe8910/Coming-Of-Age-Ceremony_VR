@@ -8,6 +8,7 @@ using Project;
 using Sirenix.OdinInspector;
 using UnityEngine.UI;
 using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class DialogSystem : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] Text nameText;
     [SerializeField] GameObject dialogTextParent;
     [SerializeField] GameObject dialogCanvas;
+    
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] audioClips;
     
     private void Start()
     {
@@ -56,6 +60,23 @@ public class DialogSystem : MonoBehaviour
 
             foreach (var sentenceDetail in dialogDataList.sentenceDetails)
             {
+                if (sentenceDetail.sentence.Length <= 8)
+                {
+                    audioSource.clip = audioClips[0];
+                }
+                else if(sentenceDetail.sentence.Length > 8 && sentenceDetail.sentence.Length < 18)
+                {
+                    audioSource.clip = audioClips[1];
+                }
+                else
+                {
+                    audioSource.clip = audioClips[2];
+                }
+
+
+                audioSource.Play();
+
+                
                 SetDialogTalkName(sentenceDetail.speaker);
                 SetDialogText(sentenceDetail.sentence);
                 DetectException(sentenceDetail.sentence);
