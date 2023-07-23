@@ -16,7 +16,7 @@ public class LineRendererScript : MonoBehaviour
     void Update()
     {
         lineRenderer.SetPosition(0 , firstPos.position);
-        lineRenderer.SetPosition(1 , endPos.position);
+        lineRenderer.SetPosition(1 , firstPos.position + firstPos.forward * 20);
     }
 
     public void SetTarget(Vector3 _target)

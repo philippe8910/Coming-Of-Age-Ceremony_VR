@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 8561bf1796c6a514eaa6809fa51d2766, type: 3}
+        m_Texture: {fileID: 2800000, guid: e45b6f5bc9baeab4ca17ddfa35452038, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -128,9 +128,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionMapChannelMask: {r: 1, g: 1, b: 1, a: 0}
-    - _IndirectLightMinColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    - _IndirectLightMinColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
     - _OcclusionMapChannelMask: {r: 1, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ShadowMapColor: {r: 1, g: 0.825, b: 0.78, a: 1}

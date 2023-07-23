@@ -23,7 +23,7 @@ public class TeleportScript : MonoBehaviour
         if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude > 0.1f)
         {
             rayRender.gameObject.SetActive(true);
-            StopAllCoroutines();
+            //StopAllCoroutines();
 
             RaycastHit hit;
             if (Physics.Raycast(playerController.position, playerController.forward, out hit, teleportRange))
@@ -35,7 +35,7 @@ public class TeleportScript : MonoBehaviour
                     if (hit.collider.GetComponent<TeleportEvent>())
                     {
                         var events = hit.collider.GetComponent<TeleportEvent>();
-
+                        
                         events.TeleportEnd();
                     }
                     
