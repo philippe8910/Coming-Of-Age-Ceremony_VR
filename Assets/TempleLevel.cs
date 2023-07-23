@@ -17,6 +17,8 @@ public class TempleLevel : MonoBehaviour
 
     public int loopCount = 0;
 
+    public AudioSource passLevelAudio;
+
     async void Start()
     {
         await Task.Delay(100);
@@ -41,6 +43,7 @@ public class TempleLevel : MonoBehaviour
     {
         ///繞完轎
         EventBus.Post(new DialogDetected("2-3", null));
+        passLevelAudio.Play();
     }
 
 
