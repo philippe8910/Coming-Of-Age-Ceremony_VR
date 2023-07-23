@@ -1103,7 +1103,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225617136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -31}
   m_LocalScale: {x: 1, y: 0.62433, z: 1}
   m_Children: []
   m_Father: {fileID: 430484336}
@@ -1111,8 +1111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1364, y: 128}
-  m_SizeDelta: {x: 1217.5, y: 285.8}
+  m_AnchoredPosition: {x: -962, y: 195}
+  m_SizeDelta: {x: 1923.7, y: 285.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225617138
 MonoBehaviour:
@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.24217772, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1148,7 +1148,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'https://www.youtube.com/watch?v=LB7h1jlrC60&ab_channel=%E4%B8%89%E7%AB%8BLIVE%E6%96%B0%E8%81%9E
-
 
     https://www.youtube.com/watch?v=kSn5hk4z9Hw&ab_channel=WesDavies%E8%A1%9B%E6%96%AF%E7%90%86'
 --- !u!222 &225617139
@@ -6785,6 +6784,42 @@ PrefabInstance:
     - target: {fileID: 5041266306409792691, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0000000023171474
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.006255876
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0000000100408215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9984217
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.056157082
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00061291584
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000034532753
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -6.439
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044799252395468911, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5135542848549655959, guid: b5004d9cb77afe9449848e16ac6e2d17, type: 3}
       propertyPath: m_Layer
