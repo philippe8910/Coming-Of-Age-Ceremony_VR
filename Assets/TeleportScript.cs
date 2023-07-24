@@ -19,7 +19,7 @@ public class TeleportScript : MonoBehaviour
 
     private void Update()
     {
-        text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
+        //text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
         
         // 檢測右搖桿是否被推動
         if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude > 0.1f)
