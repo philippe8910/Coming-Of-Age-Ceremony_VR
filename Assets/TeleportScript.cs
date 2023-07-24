@@ -15,6 +15,9 @@ public class TeleportScript : MonoBehaviour
     
     public Text text;
 
+    [SerializeField] float clock;
+    [SerializeField] GameObject currentTeleport;
+
     private void Update()
     {
         //text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
@@ -31,6 +34,7 @@ public class TeleportScript : MonoBehaviour
                 // 檢查是否碰撞到傳送點
                 if (hit.collider.CompareTag("TeleportPoint"))
                 {
+                    currentTeleport = hit.collider.gameObject;
                     //text.text = "Hit";
                     if (hit.collider.GetComponent<TeleportEvent>())
                     {
@@ -41,6 +45,10 @@ public class TeleportScript : MonoBehaviour
                     
                     pos = hit.point;
                     StartCoroutine(Teleport(pos));
+                }
+                else
+                {
+                    clock = clock > 0 ? clock - Time.deltaTime : 0;
                 }
             }
         }
