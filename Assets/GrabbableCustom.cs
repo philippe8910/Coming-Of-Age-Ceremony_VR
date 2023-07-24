@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class GrabbableCustom : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GrabbableCustom : MonoBehaviour
     public string answerTag;
 
     public UnityEvent OnGrab, OnRelease;
-
+    
     private void Start()
     {
         var eventWrapper = GetComponent<PointableUnityEventWrapper>();
@@ -28,5 +29,11 @@ public class GrabbableCustom : MonoBehaviour
             isGrab = false;
             OnRelease.Invoke();
         });
+    }
+
+    [Button]
+    public void ClickOnGrab()
+    {
+        OnGrab.Invoke();
     }
 }
