@@ -24,6 +24,13 @@ public class LevelSystem : MonoBehaviour
         EventBus.Post(new DialogDetected("1-1", delegate{ 
             EventBus.Post(new DialogDetected("1-2", delegate{
                 EventBus.Post(new DialogDetected("1-3", delegate{
+                    EventBus.Post(new DialogDetected("1-4", delegate{
+                        EventBus.Post(new DialogDetected("1-5", delegate{
+                            EventBus.Post(new DialogDetected("1-6", delegate{
+                                clothFadeOut.StartFadeOut();
+                            }));
+                        }));
+                    }));
                     EventBus.Post(new VideoStartDetected());
                 }));
             }));
@@ -40,13 +47,7 @@ public class LevelSystem : MonoBehaviour
 
     private void OnVideoEndDetected(VideoEndDetected obj)
     {
-        EventBus.Post(new DialogDetected("1-4", delegate{
-            EventBus.Post(new DialogDetected("1-5", delegate{
-                EventBus.Post(new DialogDetected("1-6", delegate{
-                    clothFadeOut.StartFadeOut();
-                }));
-            }));
-        }));
+        
         
     }
     
