@@ -13,8 +13,14 @@ public class UserLookPhotoCtr : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        //ShowUserLookPhoto();
+    }
+
     public void ShowUserLookPhoto()
     {
+        print("ShowUserLookPhoto");
         // DOTween.To(() => tra , x => canvasGroup.alpha = x , 1 ,1)
         //     .SetEase(Ease.Linear);
         transform.DOMoveY(1, 1).onComplete += delegate{
