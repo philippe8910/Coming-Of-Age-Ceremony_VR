@@ -6,6 +6,7 @@ using Events;
 using Events._7MMEvent;
 using Project;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TempleLevel : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class TempleLevel : MonoBehaviour
 
     public Transform pos, canvas;
 
+    public UnityEvent OnDialog2_1End;
+
     async void Start()
     {
         await Task.Delay(100);
@@ -30,6 +33,7 @@ public class TempleLevel : MonoBehaviour
         EventBus.Post(new DialogDetected("2-1", delegate{
             EventBus.Post(new TempleLevelStartDetected());
             EventBus.Post(new StartPlaceObjectLevelDetected());
+            OnDialog2_1End.Invoke();
         }));
         
         placeObjectPack.ForEach(delegate(GameObject o)
