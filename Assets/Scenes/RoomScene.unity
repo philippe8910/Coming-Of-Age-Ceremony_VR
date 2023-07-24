@@ -4514,7 +4514,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0.253
+  - 0
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -5218,6 +5218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372158890}
+  - component: {fileID: 1372158891}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -5240,6 +5241,18 @@ Transform:
   m_Father: {fileID: 411184761}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1372158891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372158889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6394c9bb15612224aad9df13cc29d9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1383309825
 GameObject:
   m_ObjectHideFlags: 0
