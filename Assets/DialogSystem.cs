@@ -17,6 +17,8 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] GameObject dialogTextParent;
     [SerializeField] GameObject dialogCanvas;
 
+    [SerializeField] Transform dialogPosition;
+
     [SerializeField] Animator animator;
     
     [SerializeField] AudioSource audioSource;
@@ -150,6 +152,12 @@ public class DialogSystem : MonoBehaviour
     public void SetdefaultSpineAni()
     {
         SevenMMSpineCtr.instance.SetdefaultSpineAni();
+    }
+
+    public void SetOtherPosition()
+    {
+        dialogCanvas.transform.position = dialogPosition.position;
+        dialogCanvas.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
     }
 
 }

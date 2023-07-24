@@ -21,6 +21,8 @@ public class TempleLevel : MonoBehaviour
 
     public GameObject certificate;
 
+    public Transform pos, canvas;
+
     async void Start()
     {
         await Task.Delay(100);
@@ -107,6 +109,13 @@ public class TempleLevel : MonoBehaviour
         if (loopCount >= 3)
         {
             EventBus.Post(new PassLoopRoundDetected());
+            SetOtherPos();
         }
+    }
+
+    public void SetOtherPos()
+    {
+        canvas.transform.position = pos.position;
+        canvas.transform.rotation = Quaternion.Euler(new Vector3(0,-180,0));
     }
 }

@@ -4,6 +4,7 @@ using Events._7MMEvent;
 using Project;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSystem : MonoBehaviour
 {
@@ -54,5 +55,11 @@ public class LevelSystem : MonoBehaviour
     private void OnSwitchSceneToTempleDetected(SwitchSceneToTempleDetected obj)
     {
         
+    }
+
+    public void PostDialogEvent_1_7()
+    {
+        EventBus.Post(new DialogDetected("1-7", delegate{
+        }));
     }
 }

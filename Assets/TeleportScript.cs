@@ -15,9 +15,6 @@ public class TeleportScript : MonoBehaviour
     
     public Text text;
 
-    [SerializeField] float clock;
-    [SerializeField] GameObject currentTeleport;
-
     private void Update()
     {
         text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
@@ -40,17 +37,10 @@ public class TeleportScript : MonoBehaviour
                     
                     if (events.loadBar.fillAmount >= 1)
                     {
-                        currentTeleport = hit.collider.gameObject;
-                    
-                        events.TeleportEnd();
-
                         pos = hit.point;
                         StartCoroutine(Teleport(pos));
+                        events.TeleportEnd();
                     }
-                }
-                else
-                {
-                    clock = clock > 0 ? clock - Time.deltaTime : 0;
                 }
             }
         }
