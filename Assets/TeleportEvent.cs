@@ -33,9 +33,11 @@ public class TeleportEvent : MonoBehaviour
 
     private void Update()
     {
-        var target = new Vector3(0, player.transform.position.y,
-            loadBar.transform.localPosition.z);
-        loadBar.transform.LookAt(target);
+        var canvas = loadBar.transform.parent;
+        var target = new Vector3(0, canvas.transform.position.y, canvas.transform.localPosition.z);
+
+        
+        canvas.transform.LookAt(target);
         
         
         if (isTrigger)
