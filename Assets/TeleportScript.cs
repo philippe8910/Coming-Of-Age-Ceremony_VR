@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using Events;
 using Project;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -51,7 +53,7 @@ public class TeleportScript : MonoBehaviour
             rayRender.gameObject.SetActive(false);
         }
     }
-
+    
     private IEnumerator Teleport(Vector3 destination)
     {
         EventBus.Post(new TeleportEffectDetected(delegate
