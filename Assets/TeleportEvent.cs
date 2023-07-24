@@ -6,21 +6,50 @@ using System.Threading;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class TeleportEvent : MonoBehaviour
 {
     public UnityEvent OnTeleportEnd;
+
+    public Image loadBar;
+
+    public bool isTrigger;
+
+    public Transform player;
     
     public InputDevice rightController;
     private bool isVibrating = false;
 
     private void Start()
     {
+        player = FindObjectOfType<OVRCameraRig>().transform;
+        
         List<InputDevice> devices = new List<InputDevice>();
         InputDevices.GetDevicesWithRole(InputDeviceRole.RightHanded, devices);
         rightController = devices.FirstOrDefault();
     }
+
+    private void Update()
+    {
+        var target = new Vector3(0, player.transform.position.y,
+            loadBar.transform.localPosition.z);
+        loadBar.transform.LookAt(target);
+        
+        
+        if (isTrigger)
+        {
+            loadBar.fillAmount += Time.deltaTime * 10;
+        }
+        else
+        {
+            loadBar.fillAmount -= Time.deltaTime * 10;
+        }
+
+        isTrigger = false;
+    }
+
 
     [Button]
     public void TeleportEnd()

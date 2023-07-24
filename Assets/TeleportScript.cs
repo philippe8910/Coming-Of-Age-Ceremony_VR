@@ -34,17 +34,19 @@ public class TeleportScript : MonoBehaviour
                 // 檢查是否碰撞到傳送點
                 if (hit.collider.CompareTag("TeleportPoint"))
                 {
-                    currentTeleport = hit.collider.gameObject;
-                    //text.text = "Hit";
-                    if (hit.collider.GetComponent<TeleportEvent>())
-                    {
-                        var events = hit.collider.GetComponent<TeleportEvent>();
-                        
-                        events.TeleportEnd();
-                    }
+                    var events = hit.collider.GetComponent<TeleportEvent>();
                     
-                    pos = hit.point;
-                    StartCoroutine(Teleport(pos));
+                    events.isTrigger = true;
+                    
+                    if (events.loadBar.fillAmount >= 1)
+                    {
+                        currentTeleport = hit.collider.gameObject;
+                    
+                        events.TeleportEnd();
+
+                        pos = hit.point;
+                        StartCoroutine(Teleport(pos));
+                    }
                 }
                 else
                 {
