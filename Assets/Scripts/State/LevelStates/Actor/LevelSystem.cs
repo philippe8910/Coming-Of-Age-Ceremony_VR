@@ -10,6 +10,7 @@ public class LevelSystem : MonoBehaviour
 {
     [SerializeField] private MAKABAKAVideoCtr videoCtractor;
     [SerializeField] private ClothFadeOut clothFadeOut;
+    [SerializeField] private GameObject UXArrow;
     
     async void Start()
     {
@@ -28,6 +29,7 @@ public class LevelSystem : MonoBehaviour
                     EventBus.Post(new DialogDetected("1-4", delegate{
                         EventBus.Post(new DialogDetected("1-5", delegate{
                             EventBus.Post(new DialogDetected("1-6", delegate{
+                                UXArrow.SetActive(true);
                                 clothFadeOut.StartFadeOut();
                             }));
                         }));

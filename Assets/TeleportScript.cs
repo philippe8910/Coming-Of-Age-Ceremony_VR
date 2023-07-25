@@ -6,18 +6,19 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 public class TeleportScript : MonoBehaviour
 {
     [FormerlySerializedAs("playerCamera")] 
     public Transform playerController , rayRender , cameraRig; // 玩家的攝影機
-    public float teleportRange = 10f; // 傳送範圍
+    public float teleportRange = 20f; // 傳送範圍
 
     public Vector3 pos = Vector3.zero;
     
     public Text text;
 
-    private void Update()
+    private async void Update()
     {
         //text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
         
@@ -41,6 +42,8 @@ public class TeleportScript : MonoBehaviour
                     {
                         pos = hit.point;
                         StartCoroutine(Teleport(pos));
+
+                        await Task.Delay(100);
                         events.TeleportEnd();
                     }
                 }

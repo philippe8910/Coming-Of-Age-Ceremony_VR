@@ -42,11 +42,11 @@ public class TeleportEvent : MonoBehaviour
         
         if (isTrigger)
         {
-            loadBar.fillAmount += Time.deltaTime * 2;
+            loadBar.fillAmount += Time.deltaTime;
         }
         else
         {
-            loadBar.fillAmount -= Time.deltaTime * 2;
+            loadBar.fillAmount -= Time.deltaTime;
         }
 
         isTrigger = false;

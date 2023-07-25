@@ -30,9 +30,11 @@ public class TempleLevel : MonoBehaviour
     {
         await Task.Delay(100);
 
-        EventBus.Post(new DialogDetected("2-1", delegate{
+        EventBus.Post(new DialogDetected("2-1", async delegate {
             EventBus.Post(new TempleLevelStartDetected());
             EventBus.Post(new StartPlaceObjectLevelDetected());
+
+            await Task.Delay(5000);
             OnDialog2_1End.Invoke();
         }));
         

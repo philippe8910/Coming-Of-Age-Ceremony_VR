@@ -1584,6 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoCtractor: {fileID: 0}
   clothFadeOut: {fileID: 0}
+  UXArrow: {fileID: 1717767044}
 --- !u!1001 &289851076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8479,6 +8480,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1155150031}
     m_Modifications:
+    - target: {fileID: 8025306249725277912, guid: 8b2cf91ece5e5f3489699ad86674df1f, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8025306249725277914, guid: 8b2cf91ece5e5f3489699ad86674df1f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -8800,7 +8805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881718413}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0.603, y: 0.918, z: 1.344}
+  m_LocalPosition: {x: 0.317, y: 0.918, z: 1.344}
   m_LocalScale: {x: 0.40218, y: 0.40218, z: 0.40218}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12595,7 +12600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5450212934938583652, guid: 71dd0e0e5003e8045825b67a384c1861, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.673
+      value: 1.977
       objectReference: {fileID: 0}
     - target: {fileID: 5450212934938583652, guid: 71dd0e0e5003e8045825b67a384c1861, type: 3}
       propertyPath: m_LocalPosition.y
