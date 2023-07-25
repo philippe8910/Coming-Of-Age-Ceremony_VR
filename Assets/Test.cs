@@ -23,4 +23,9 @@ public class Test : MonoBehaviour
     {
         SceneManager.LoadScene("TempleScene");
     }
+
+    public void ResetAllGame()
+    {
+        SceneManager.LoadScene("RoomScene");
+    }
 }
