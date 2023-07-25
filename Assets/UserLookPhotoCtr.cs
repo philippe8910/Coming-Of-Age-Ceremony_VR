@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Events;
 using Project;
+using System.Threading.Tasks;
 
 public class UserLookPhotoCtr : MonoBehaviour
 {
@@ -18,9 +19,13 @@ public class UserLookPhotoCtr : MonoBehaviour
         //ShowUserLookPhoto();
     }
 
-    public void ShowUserLookPhoto()
+    public async void ShowUserLookPhoto()
     {
+
+        await Task.Delay(5000);
+
         print("ShowUserLookPhoto");
+
         // DOTween.To(() => tra , x => canvasGroup.alpha = x , 1 ,1)
         //     .SetEase(Ease.Linear);
         transform.DOMoveY(1, 1).onComplete += delegate{
