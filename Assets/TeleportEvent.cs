@@ -34,12 +34,16 @@ public class TeleportEvent : MonoBehaviour
     private void Update()
     {
         var canvas = loadBar.transform.parent;
-        var target = new Vector3(0, canvas.transform.position.y, canvas.transform.localPosition.z);
+        //var target = new Vector3(0, canvas.transform.position.y, canvas.transform.localPosition.z);
 
-        
-        canvas.transform.LookAt(target);
-        
-        
+        var dir = (player.position - canvas.position).normalized;
+        dir = new Vector3(dir.x, 0, dir.z);
+
+        canvas.forward = dir;
+
+        //canvas.transform.LookAt(target);
+
+
         if (isTrigger)
         {
             loadBar.fillAmount += Time.deltaTime;

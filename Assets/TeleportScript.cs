@@ -18,7 +18,7 @@ public class TeleportScript : MonoBehaviour
     
     public Text text;
 
-    private async void Update()
+    private void Update()
     {
         //text.text = "" + OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).magnitude;
         
@@ -40,10 +40,10 @@ public class TeleportScript : MonoBehaviour
                     
                     if (events.loadBar.fillAmount >= 1)
                     {
+                        events.loadBar.fillAmount = 0;
                         pos = hit.point;
                         StartCoroutine(Teleport(pos));
 
-                        await Task.Delay(100);
                         events.TeleportEnd();
                     }
                 }
