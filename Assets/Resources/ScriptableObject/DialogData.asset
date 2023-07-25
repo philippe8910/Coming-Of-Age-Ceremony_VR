@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb9655b72840bf409cd5bfd2c26d363, type: 3}
   m_Name: DialogData
   m_EditorClassIdentifier: 
-  gapTimer: 3
+  gapTimer: 1.5
   dialogDataDetails:
   - ID: 0-1
     dialogPosition: {x: 0, y: 0, z: 0}
