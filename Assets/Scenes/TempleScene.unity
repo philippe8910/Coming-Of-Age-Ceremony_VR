@@ -1383,6 +1383,7 @@ MonoBehaviour:
   loopCount: 0
   passLevelAudio: {fileID: 2109846348}
   certificate: {fileID: 1503864634}
+  ResetCube: {fileID: 2926741016541443230}
   pos: {fileID: 1456664197}
   canvas: {fileID: 1954026194}
   OnDialog2_1End:
@@ -4016,7 +4017,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.324
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14859,8 +14860,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.31900474, y: 0.29329708, z: 0.08514546}
-  m_Center: {x: 0.006422797, y: -0.00385327, z: 0.11050242}
+  m_Size: {x: 0.109839626, y: 0.114523366, z: 0.10302266}
+  m_Center: {x: 0.0037411314, y: 0.0015099823, z: -0.0010614094}
 --- !u!33 &2963848800990765398
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class TempleLevel : MonoBehaviour
 
     public GameObject certificate;
 
+    public GameObject ResetCube;
+
     public Transform pos, canvas;
 
     public UnityEvent OnDialog2_1End;
@@ -55,6 +57,7 @@ public class TempleLevel : MonoBehaviour
         EventBus.Post(new DialogDetected("2-3", null));
         passLevelAudio.Play();
         certificate.SetActive(true);
+        ResetCube.SetActive(true);
     }
 
 
